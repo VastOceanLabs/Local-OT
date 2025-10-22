@@ -1,102 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services — Local OT</title>
-  <meta name="description" content="Assistive technology, home modifications and functional assessments. Local OT is a registered NDIS and Medicare provider.">
-  <meta name="theme-color" content="#2f7b5e">
-  <link rel="preload" href="/css/styles.css" as="style">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">\n<link rel="apple-touch-icon" sizes="512x512" href="/assets/favicon-512.png">
-  <meta property="og:title" content="Services — Local OT">
-  <meta property="og:description" content="Assistive technology, home modifications and functional assessments. Local OT is a registered NDIS and Medicare provider.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="/assets/localot-logo.png">
-  <meta property="og:url" content="https://www.localot.com.au/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Local OT | Occupational Therapy Goulburn</title>
+    <meta name="description" content="Local OT provides comprehensive occupational therapy services including daily living support, equipment assessment, and home modifications.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2d8659;
+            --light-green: #e8f5f0;
+            --dark-green: #1e5a3d;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 55px;
+            height: 55px;
+            background: var(--primary-green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .logo h1 {
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-green);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .service-item {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+        }
+
+        .service-header {
+            background: var(--light-green);
+            padding: 3rem;
+            border-left: 6px solid var(--primary-green);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-header h2 {
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-header p {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .service-content {
+            padding: 3rem;
+        }
+
+        .service-content h3 {
+            color: var(--dark-green);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--light-bg);
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .info-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .info-box {
+            background: var(--light-green);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .info-box h3 {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-box p {
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-radius: 20px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-green);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: var(--dark-green);
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .service-header,
+            .service-content {
+                padding: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="LocalOT.png" alt="Local OT Logo" style="width: 55px; height: 55px; border-radius: 12px;">
+                <h1>Local OT</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="container hdr">
-    <a class="brand" href="/index.html" aria-label="Local OT Home">
-      <img src="/assets/localot-logo.png" alt="Local OT logo">
-      <span>Local OT</span>
-    </a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-    <nav id="primary-nav" class="nav" aria-label="Primary">
-      <a href="/services.html">Services</a>
-      <a href="/about.html">About Us</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/useful-links.html">Helpful contacts &amp; funding</a>
-    </nav>
-  </div>
-</header>
+    <section class="page-header">
+        <h1>Our Services</h1>
+        <p>Comprehensive occupational therapy support tailored to your needs</p>
+    </section>
 
-<main id="main">
+    <section class="section">
+        <div class="intro">
+            <p>We can support you to improve or maintain your independence. We can find the best way to get day to day things done, help you find the right piece of equipment and/or work with you to investigate suitable home modifications. These are just some of the ways that Local OT may be able to assist you.</p>
+        </div>
 
-<section class="section">
-  <div class="container">
-    <h1>Local Occupational Therapy Services</h1>
-    <p><strong>Contact us for assistance with equipment prescription, assistive technology, home modifications and/or functional assessments</strong></p>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-header">
+                    <div class="service-icon">🏠</div>
+                    <h2>Daily Living Support</h2>
+                    <p>Helping you maintain and improve your independence in everyday activities</p>
+                </div>
+                <div class="service-content">
+                    <h3>We Can Help You With:</h3>
+                    <ul class="service-list">
+                        <li>Maintaining your independence at home</li>
+                        <li>Finding the best way to get day-to-day things done</li>
+                        <li>Developing practical strategies for daily tasks</li>
+                        <li>Improving your quality of life</li>
+                        <li>Adapting activities to suit your abilities</li>
+                        <li>Building confidence in daily routines</li>
+                    </ul>
+                </div>
+            </div>
 
-    <h2>Areas of Practice</h2>
-    <hr style="border:none; border-top:1px solid var(--border); margin:12px 0 0">
+            <div class="service-item">
+                <div class="service-header">
+                    <div class="service-icon">🛠️</div>
+                    <h2>Equipment Assessment & Support</h2>
+                    <p>Professional guidance to find the right equipment for your needs</p>
+                </div>
+                <div class="service-content">
+                    <h3>Equipment Services Include:</h3>
+                    <ul class="service-list">
+                        <li>Comprehensive equipment assessments</li>
+                        <li>Finding the right piece of equipment for you</li>
+                        <li>Assistive technology recommendations</li>
+                        <li>Equipment trials and demonstrations</li>
+                        <li>Training on proper equipment use</li>
+                        <li>Ongoing support and follow-up</li>
+                    </ul>
+                </div>
+            </div>
 
-    <h3>Assistive Technology / equipment prescription</h3>
-    <p>The provision of the right piece of equipment that compliments your current abilities can improve your independence. We have extensive experience in the provision of assistive technology and can help you to find a solution.</p>
-    <p>To find the right piece of assistive technology we will meet with you, assess your abilities and difficulties and trial options which may be suitable. Where relevant, an application can then be submitted to the appropriate funding body to seek approval for funding.</p>
+            <div class="service-item">
+                <div class="service-header">
+                    <div class="service-icon">🔧</div>
+                    <h2>Home Modifications</h2>
+                    <p>Working with you to create a safer, more accessible home environment</p>
+                </div>
+                <div class="service-content">
+                    <h3>Home Modification Services:</h3>
+                    <ul class="service-list">
+                        <li>Investigating suitable home modifications</li>
+                        <li>Home safety assessments</li>
+                        <li>Accessibility evaluations</li>
+                        <li>Modification planning and recommendations</li>
+                        <li>Liaising with builders and contractors</li>
+                        <li>Post-modification reviews</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-    <p>Assistive technology may include:</p>
-    <ul>
-      <li>Wheelchairs / mobility equipment</li>
-      <li>Hoists and lifting aids</li>
-      <li>Stairlifts</li>
-      <li>Seating supports (lift chairs, pressure relief supports)</li>
-      <li>Commodes</li>
-      <li>Shower / toilet / bath seating</li>
-      <li>Daily living aids (eating, meal preparation, dressing etc.)</li>
-      <li>Specialised beds and mattresses</li>
-    </ul>
-    <p>If you have a need that is not listed above, we may still be able to help. Please email or call us to discuss further.</p>
+        <div class="info-boxes">
+            <div class="info-box">
+                <h3>NDIS Participants</h3>
+                <p>We are a registered NDIS provider and can work with you to achieve your NDIS goals and make the most of your plan.</p>
+            </div>
 
-    <hr style="border:none; border-top:1px solid var(--border); margin:18px 0">
+            <div class="info-box">
+                <h3>Aged Care Referrals</h3>
+                <p>We accept referrals from aged care packages and work closely with aged care providers to support older adults in maintaining independence.</p>
+            </div>
 
-    <h3>Home Modifications</h3>
-    <p>Appropriate home modifications can improve accessibility, independence and safety. We aim to develop an individual plan that will assist you to meet your needs in the most effective manner and in compliance with legislative requirements and funding body requirements. Our therapists can meet with you to discuss:</p>
-    <ul>
-      <li>Bathrooms (getting into or out of the shower, using fittings or fixtures)</li>
-      <li>Entrances or exits to the home (steps, threshold steps, navigating doorways)</li>
-      <li>Wheelchair accessibility around the home (internally and externally).</li>
-      <li>Ceiling track hoists</li>
-      <li>Grab rails or railings</li>
-    </ul>
+            <div class="info-box">
+                <h3>Insurance Referrals</h3>
+                <p>We work with insurance companies and accept referrals for occupational therapy services related to injury recovery and rehabilitation.</p>
+            </div>
 
-    <hr style="border:none; border-top:1px solid var(--border); margin:18px 0">
+            <div class="info-box">
+                <h3>Private Clients</h3>
+                <p>Private clients are welcome. We offer flexible services tailored to your individual needs and goals, with transparent pricing.</p>
+            </div>
+        </div>
 
-    <h3>Day to day activities</h3>
-    <p>Would you like to explore potential improvement in completing your day to day activities? Or do you need some supporting documentation on current function? We can complete a functional assessment of how you complete your tasks, we may then be able to help find ways to maximise your independence in self-care (showering, dressing, toileting) activities, household activities or community based activities.</p>
-    <p>Contact us if you would like to find out more.</p>
+        <div class="cta-section">
+            <h2>Discuss Your Needs</h2>
+            <p>Contact us today to learn more about how we can help you</p>
+            <a href="contact.html" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
 
-    <hr style="border:none; border-top:1px solid var(--border); margin:18px 0">
-
-    <h3>Further questions?</h3>
-    <p>Have a question that isn't covered above? We may be able to help. Our therapists have experience working collaboratively with our clients and working with government funding bodies. Call or email us to discuss.</p>
-    <p><strong>Local OT is Registered NDIS and Medicare Provider.</strong></p>
-  </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container foot">
-    <p>0499 008 722 &nbsp;•&nbsp; <a href="mailto:services@localot.com.au">services@localot.com.au</a> &nbsp;•&nbsp; PO Box 320, Moss Vale NSW 2577</p>
-    <small class="muted">© <span id="year"></span> Local OT</small>
-  </div>
-</footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script src="/js/site.js" defer></script>
-
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Local OT</h4>
+                <p>Professional Occupational Therapy services in the Goulburn region.</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">Accepting NDIS, aged care, insurance, and private referrals.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 services@localot.com.au</p>
+                <p>📞 0499 008 722</p>
+                <p>📍 Goulburn Region, NSW</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Local OT. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
