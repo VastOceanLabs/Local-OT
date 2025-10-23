@@ -1,6 +1,4 @@
-<a href="index.html" class="logo">
-                <img src="LocalOT.png" alt="Local OT Logo" style="height: 55px; width: auto;">
-            </a><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,23 +37,24 @@
             z-index: 100;
         }
 
+        .logo-banner {
+            text-align: center;
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-banner img {
+            height: 80px;
+            width: auto;
+        }
+
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 60px;
-            width: auto;
         }
 
         .nav-links {
@@ -334,11 +333,12 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <img src="LocalOT.png" alt="Local OT Logo" style="width: 55px; height: 55px; border-radius: 12px;">
-                <h1>Local OT</h1>
+        <div class="logo-banner">
+            <a href="index.html">
+                <img src="LocalOT.png" alt="Local OT Logo">
             </a>
+        </div>
+        <nav>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
