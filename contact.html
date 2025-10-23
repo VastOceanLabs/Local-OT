@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Local OT | Occupational Therapy Goulburn</title>
-    <meta name="description" content="Learn about Local OT's experienced team and our commitment to providing quality occupational therapy services in the Goulburn region.">
+    <title>Contact Us - Local OT | Occupational Therapy Goulburn</title>
+    <meta name="description" content="Get in touch with Local OT. Call us on 0499 008 722 or email services@localot.com.au for occupational therapy services in Goulburn.">
     <style>
         * {
             margin: 0;
@@ -16,11 +16,11 @@
             --primary-green: #2d8659;
             --light-green: #e8f5f0;
             --dark-green: #1e5a3d;
-            --accent-green: #3da76f;
             --text-dark: #2c3e50;
             --text-light: #6c757d;
             --white: #ffffff;
             --light-bg: #f8f9fa;
+            --border: #e0e0e0;
         }
 
         body {
@@ -119,150 +119,184 @@
             padding: 5rem 2rem;
         }
 
-        .content-grid {
+        .contact-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .contact-intro h2 {
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-intro p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: start;
         }
 
-        .content-block {
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-card {
             background: var(--white);
-        }
-
-        .content-block h2 {
-            color: var(--primary-green);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .content-block h3 {
-            color: var(--dark-green);
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-        }
-
-        .content-block p {
-            color: var(--text-dark);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .highlight-box {
-            background: var(--light-green);
             padding: 2.5rem;
             border-radius: 15px;
-            border-left: 4px solid var(--primary-green);
-        }
-
-        .highlight-box h3 {
-            color: var(--primary-green);
-            margin-top: 0;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            text-align: center;
             transition: transform 0.3s;
         }
 
-        .value-card:hover {
+        .contact-card:hover {
             transform: translateY(-5px);
         }
 
-        .value-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .value-card h3 {
-            color: var(--primary-green);
-            margin-bottom: 1rem;
-        }
-
-        .value-card p {
-            color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .credentials {
-            background: var(--light-bg);
-            padding: 3rem;
-            border-radius: 15px;
-            margin-top: 3rem;
-        }
-
-        .credentials h3 {
-            color: var(--primary-green);
-            text-align: center;
-            margin-bottom: 2rem;
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.8rem;
+            margin-bottom: 1.5rem;
         }
 
-        .credentials-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .credential-badge {
-            background: var(--white);
-            padding: 1.5rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-            text-align: center;
-            font-weight: 600;
+        .contact-card h3 {
             color: var(--primary-green);
-            font-size: 1.1rem;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-            color: var(--white);
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-top: 3rem;
-            border-radius: 20px;
-        }
-
-        .cta-section h2 {
-            font-size: 2.2rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
+        .contact-card p {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: var(--white);
+        .contact-card a {
             color: var(--primary-green);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            font-size: 1.2rem;
+            transition: color 0.3s;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        .contact-card a:hover {
+            color: var(--dark-green);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-form h3 {
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .info-section {
+            background: var(--light-green);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-top: 4rem;
+        }
+
+        .info-section h3 {
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-item h4 {
+            color: var(--dark-green);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            color: var(--text-dark);
         }
 
         footer {
@@ -313,112 +347,138 @@
                 font-size: 2rem;
             }
 
-            .content-grid {
+            .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
 
             .section {
                 padding: 3rem 1.5rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo-banner">
-            <a href="index.html">
-                <img src="LocalOT.png" alt="Local OT Logo">
-            </a>
-        </div>
         <nav>
+            <a href="index.html" class="logo">
+                <img src="LocalOT.png" alt="Local OT Logo" style="width: 55px; height: 55px; border-radius: 12px;">
+                <h1>Local OT</h1>
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="page-header">
-        <h1>About Local OT</h1>
-        <p>Dedicated to supporting your independence and wellbeing</p>
+        <h1>Let's Chat</h1>
+        <p>We're here to answer your questions and discuss how we can help</p>
     </section>
 
     <section class="section">
-        <div class="content-grid">
-            <div class="content-block">
-                <h2>Who We Are</h2>
-                <p>Local OT provides Occupational Therapy services for clients in the Goulburn region. We have extensive experience in providing Occupational Therapy and working with clients to achieve positive outcomes.</p>
-                
-                <p>We can support you to improve or maintain your independence. We can find the best way to get day to day things done, help you find the right piece of equipment and/or work with you to investigate suitable home modifications.</p>
+        <div class="contact-intro">
+            <h2>Get in Touch</h2>
+            <p>Have a question about what we do, or what we can help with? Would you like to provide us with some feedback? You can call, email or use the form below to get in contact with us.</p>
+        </div>
 
-                <p>These are just some of the ways that Local OT may be able to assist you. Contact us to discuss your specific needs and how we can help you achieve your goals.</p>
+        <div class="contact-grid">
+            <div class="contact-methods">
+                <div class="contact-card">
+                    <div class="contact-card-icon">📞</div>
+                    <h3>Phone</h3>
+                    <p>Give us a call to discuss your needs</p>
+                    <a href="tel:0499008722">0499 008 722</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>Send us an email anytime</p>
+                    <a href="mailto:services@localot.com.au">services@localot.com.au</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">📍</div>
+                    <h3>Service Area</h3>
+                    <p>We proudly serve the</p>
+                    <p style="color: var(--primary-green); font-weight: 600; font-size: 1.2rem;">Goulburn Region, NSW</p>
+                </div>
             </div>
 
-            <div class="highlight-box">
-                <h3>Our Approach</h3>
-                <p>At Local OT, we believe in a client-centered approach to occupational therapy. Every individual has unique needs, goals, and circumstances, and we tailor our services accordingly.</p>
-                
-                <p>We work collaboratively with you, your family, and other healthcare providers to ensure comprehensive care that supports your independence and quality of life.</p>
-                
-                <h3 style="margin-top: 2rem;">Who We Serve</h3>
-                <p>We currently provide services to individuals who are over the age of 18, helping adults of all ages maintain or improve their independence and participation in meaningful daily activities.</p>
+            <div class="contact-form">
+                <h3>Send a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="">Select a subject...</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="services">Services Information</option>
+                            <option value="ndis">NDIS Related</option>
+                            <option value="agedcare">Aged Care Referral</option>
+                            <option value="insurance">Insurance Referral</option>
+                            <option value="private">Private Client Inquiry</option>
+                            <option value="appointment">Request Appointment</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
             </div>
         </div>
 
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-icon">🎯</div>
-                <h3>Client-Focused</h3>
-                <p>Your goals and needs are at the center of everything we do.</p>
-            </div>
-
-            <div class="value-card">
-                <div class="value-icon">🤝</div>
-                <h3>Collaborative</h3>
-                <p>We work together with you to achieve the best outcomes.</p>
-            </div>
-
-            <div class="value-card">
-                <div class="value-icon">⚡</div>
-                <h3>Professional</h3>
-                <p>Experienced and qualified occupational therapy services.</p>
-            </div>
-
-            <div class="value-card">
-                <div class="value-icon">💚</div>
-                <h3>Compassionate</h3>
-                <p>Caring support throughout your therapy journey.</p>
-            </div>
-        </div>
-
-        <div class="credentials">
+        <div class="info-section">
             <h3>How to Access Our Services</h3>
-            <div class="credentials-list">
-                <div class="credential-badge">
-                    ✓ NDIS Registered Provider
+            <div class="info-grid">
+                <div class="info-item">
+                    <h4>NDIS Registered</h4>
+                    <p>We are a registered NDIS provider ready to support your plan goals</p>
                 </div>
-                <div class="credential-badge">
-                    ✓ Aged Care Referrals
+                <div class="info-item">
+                    <h4>Aged Care Referrals</h4>
+                    <p>We accept referrals from aged care packages and aged care providers</p>
                 </div>
-                <div class="credential-badge">
-                    ✓ Insurance Referrals
+                <div class="info-item">
+                    <h4>Insurance Referrals</h4>
+                    <p>We work with insurance companies for injury recovery and rehabilitation services</p>
                 </div>
-                <div class="credential-badge">
-                    ✓ Private Clients
+                <div class="info-item">
+                    <h4>Private Clients</h4>
+                    <p>Private clients welcome with flexible, personalized service options</p>
+                </div>
+                <div class="info-item">
+                    <h4>Age Requirement</h4>
+                    <p>We currently provide services to individuals aged 18 and over</p>
                 </div>
             </div>
-            <p style="text-align: center; color: var(--text-light); line-height: 1.8;">
-                We accept referrals through the NDIS, aged care packages, insurance companies, and private arrangements. This ensures flexible access to our occupational therapy services regardless of your funding source.
-            </p>
-        </div>
-
-        <div class="cta-section">
-            <h2>Ready to Work Together?</h2>
-            <p>Contact us today to discuss how we can support you</p>
-            <a href="contact.html" class="cta-button">Get in Touch</a>
         </div>
     </section>
 
@@ -447,5 +507,12 @@
             <p>&copy; 2024 Local OT. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! This is a demo form. In production, this would send your message to Local OT.');
+        });
+    </script>
 </body>
 </html>

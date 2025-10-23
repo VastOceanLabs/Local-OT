@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+<a href="index.html" class="logo">
+                <img src="LocalOT.png" alt="Local OT Logo" style="height: 55px; width: auto;">
+            </a><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Local OT | Occupational Therapy Goulburn</title>
-    <meta name="description" content="Learn about Local OT's experienced team and our commitment to providing quality occupational therapy services in the Goulburn region.">
+    <title>Our Services - Local OT | Occupational Therapy Goulburn</title>
+    <meta name="description" content="Local OT provides comprehensive occupational therapy services including daily living support, equipment assessment, and home modifications.">
     <style>
         * {
             margin: 0;
@@ -16,11 +18,11 @@
             --primary-green: #2d8659;
             --light-green: #e8f5f0;
             --dark-green: #1e5a3d;
-            --accent-green: #3da76f;
             --text-dark: #2c3e50;
             --text-light: #6c757d;
             --white: #ffffff;
             --light-bg: #f8f9fa;
+            --border: #e0e0e0;
         }
 
         body {
@@ -111,6 +113,8 @@
         .page-header p {
             font-size: 1.3rem;
             opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .section {
@@ -119,114 +123,119 @@
             padding: 5rem 2rem;
         }
 
-        .content-grid {
+        .intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .services-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
+            gap: 3rem;
         }
 
-        .content-block {
+        .service-item {
             background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .content-block h2 {
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+        }
+
+        .service-header {
+            background: var(--light-green);
+            padding: 3rem;
+            border-left: 6px solid var(--primary-green);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-header h2 {
             color: var(--primary-green);
             font-size: 2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .content-block h3 {
+        .service-header p {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .service-content {
+            padding: 3rem;
+        }
+
+        .service-content h3 {
             color: var(--dark-green);
             font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-        }
-
-        .content-block p {
-            color: var(--text-dark);
-            font-size: 1.1rem;
-            line-height: 1.8;
             margin-bottom: 1.5rem;
         }
 
-        .highlight-box {
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--light-bg);
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .info-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .info-box {
             background: var(--light-green);
             padding: 2.5rem;
             border-radius: 15px;
-            border-left: 4px solid var(--primary-green);
-        }
-
-        .highlight-box h3 {
-            color: var(--primary-green);
-            margin-top: 0;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             text-align: center;
-            transition: transform 0.3s;
         }
 
-        .value-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .value-icon {
-            font-size: 3rem;
+        .info-box h3 {
+            color: var(--primary-green);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .value-card h3 {
-            color: var(--primary-green);
-            margin-bottom: 1rem;
-        }
-
-        .value-card p {
-            color: var(--text-light);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .credentials {
-            background: var(--light-bg);
-            padding: 3rem;
-            border-radius: 15px;
-            margin-top: 3rem;
-        }
-
-        .credentials h3 {
-            color: var(--primary-green);
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-        }
-
-        .credentials-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .credential-badge {
-            background: var(--white);
-            padding: 1.5rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-            text-align: center;
-            font-weight: 600;
-            color: var(--primary-green);
-            font-size: 1.1rem;
+        .info-box p {
+            color: var(--text-dark);
+            line-height: 1.7;
         }
 
         .cta-section {
@@ -313,111 +322,127 @@
                 font-size: 2rem;
             }
 
-            .content-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
             .section {
                 padding: 3rem 1.5rem;
+            }
+
+            .service-header,
+            .service-content {
+                padding: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo-banner">
-            <a href="index.html">
-                <img src="LocalOT.png" alt="Local OT Logo">
-            </a>
-        </div>
         <nav>
+            <a href="index.html" class="logo">
+                <img src="LocalOT.png" alt="Local OT Logo" style="width: 55px; height: 55px; border-radius: 12px;">
+                <h1>Local OT</h1>
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="page-header">
-        <h1>About Local OT</h1>
-        <p>Dedicated to supporting your independence and wellbeing</p>
+        <h1>Our Services</h1>
+        <p>Comprehensive occupational therapy support tailored to your needs</p>
     </section>
 
     <section class="section">
-        <div class="content-grid">
-            <div class="content-block">
-                <h2>Who We Are</h2>
-                <p>Local OT provides Occupational Therapy services for clients in the Goulburn region. We have extensive experience in providing Occupational Therapy and working with clients to achieve positive outcomes.</p>
-                
-                <p>We can support you to improve or maintain your independence. We can find the best way to get day to day things done, help you find the right piece of equipment and/or work with you to investigate suitable home modifications.</p>
+        <div class="intro">
+            <p>We can support you to improve or maintain your independence. We can find the best way to get day to day things done, help you find the right piece of equipment and/or work with you to investigate suitable home modifications. These are just some of the ways that Local OT may be able to assist you.</p>
+        </div>
 
-                <p>These are just some of the ways that Local OT may be able to assist you. Contact us to discuss your specific needs and how we can help you achieve your goals.</p>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-header">
+                    <div class="service-icon">🏠</div>
+                    <h2>Daily Living Support</h2>
+                    <p>Helping you maintain and improve your independence in everyday activities</p>
+                </div>
+                <div class="service-content">
+                    <h3>We Can Help You With:</h3>
+                    <ul class="service-list">
+                        <li>Maintaining your independence at home</li>
+                        <li>Finding the best way to get day-to-day things done</li>
+                        <li>Developing practical strategies for daily tasks</li>
+                        <li>Improving your quality of life</li>
+                        <li>Adapting activities to suit your abilities</li>
+                        <li>Building confidence in daily routines</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="highlight-box">
-                <h3>Our Approach</h3>
-                <p>At Local OT, we believe in a client-centered approach to occupational therapy. Every individual has unique needs, goals, and circumstances, and we tailor our services accordingly.</p>
-                
-                <p>We work collaboratively with you, your family, and other healthcare providers to ensure comprehensive care that supports your independence and quality of life.</p>
-                
-                <h3 style="margin-top: 2rem;">Who We Serve</h3>
-                <p>We currently provide services to individuals who are over the age of 18, helping adults of all ages maintain or improve their independence and participation in meaningful daily activities.</p>
+            <div class="service-item">
+                <div class="service-header">
+                    <div class="service-icon">🛠️</div>
+                    <h2>Equipment Assessment & Support</h2>
+                    <p>Professional guidance to find the right equipment for your needs</p>
+                </div>
+                <div class="service-content">
+                    <h3>Equipment Services Include:</h3>
+                    <ul class="service-list">
+                        <li>Comprehensive equipment assessments</li>
+                        <li>Finding the right piece of equipment for you</li>
+                        <li>Assistive technology recommendations</li>
+                        <li>Equipment trials and demonstrations</li>
+                        <li>Training on proper equipment use</li>
+                        <li>Ongoing support and follow-up</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-header">
+                    <div class="service-icon">🔧</div>
+                    <h2>Home Modifications</h2>
+                    <p>Working with you to create a safer, more accessible home environment</p>
+                </div>
+                <div class="service-content">
+                    <h3>Home Modification Services:</h3>
+                    <ul class="service-list">
+                        <li>Investigating suitable home modifications</li>
+                        <li>Home safety assessments</li>
+                        <li>Accessibility evaluations</li>
+                        <li>Modification planning and recommendations</li>
+                        <li>Liaising with builders and contractors</li>
+                        <li>Post-modification reviews</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <div class="values-grid">
-            <div class="value-card">
-                <div class="value-icon">🎯</div>
-                <h3>Client-Focused</h3>
-                <p>Your goals and needs are at the center of everything we do.</p>
+        <div class="info-boxes">
+            <div class="info-box">
+                <h3>NDIS Participants</h3>
+                <p>We are a registered NDIS provider and can work with you to achieve your NDIS goals and make the most of your plan.</p>
             </div>
 
-            <div class="value-card">
-                <div class="value-icon">🤝</div>
-                <h3>Collaborative</h3>
-                <p>We work together with you to achieve the best outcomes.</p>
+            <div class="info-box">
+                <h3>Aged Care Referrals</h3>
+                <p>We accept referrals from aged care packages and work closely with aged care providers to support older adults in maintaining independence.</p>
             </div>
 
-            <div class="value-card">
-                <div class="value-icon">⚡</div>
-                <h3>Professional</h3>
-                <p>Experienced and qualified occupational therapy services.</p>
+            <div class="info-box">
+                <h3>Insurance Referrals</h3>
+                <p>We work with insurance companies and accept referrals for occupational therapy services related to injury recovery and rehabilitation.</p>
             </div>
 
-            <div class="value-card">
-                <div class="value-icon">💚</div>
-                <h3>Compassionate</h3>
-                <p>Caring support throughout your therapy journey.</p>
+            <div class="info-box">
+                <h3>Private Clients</h3>
+                <p>Private clients are welcome. We offer flexible services tailored to your individual needs and goals, with transparent pricing.</p>
             </div>
-        </div>
-
-        <div class="credentials">
-            <h3>How to Access Our Services</h3>
-            <div class="credentials-list">
-                <div class="credential-badge">
-                    ✓ NDIS Registered Provider
-                </div>
-                <div class="credential-badge">
-                    ✓ Aged Care Referrals
-                </div>
-                <div class="credential-badge">
-                    ✓ Insurance Referrals
-                </div>
-                <div class="credential-badge">
-                    ✓ Private Clients
-                </div>
-            </div>
-            <p style="text-align: center; color: var(--text-light); line-height: 1.8;">
-                We accept referrals through the NDIS, aged care packages, insurance companies, and private arrangements. This ensures flexible access to our occupational therapy services regardless of your funding source.
-            </p>
         </div>
 
         <div class="cta-section">
-            <h2>Ready to Work Together?</h2>
-            <p>Contact us today to discuss how we can support you</p>
+            <h2>Discuss Your Needs</h2>
+            <p>Contact us today to learn more about how we can help you</p>
             <a href="contact.html" class="cta-button">Get in Touch</a>
         </div>
     </section>
